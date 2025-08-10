@@ -1,6 +1,6 @@
 "use client";
 
-import { LogInIcon, MenuIcon } from "lucide-react";
+import { LogInIcon, MenuIcon, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,14 +20,6 @@ export const Header = () => {
   const { data: session } = authClient.useSession();
   return (
     <header className="flex items-center justify-between p-5">
-      <Link href="/">
-        <Image
-          src="/logo.png"
-          alt="Logo Dragão Mercante"
-          width={150}
-          height={58.49}
-        />
-      </Link>
       <div className="flex items-center">
         <Sheet>
           <SheetTrigger asChild>
@@ -84,6 +76,20 @@ export const Header = () => {
             </div>
           </SheetContent>
         </Sheet>
+      </div>
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="Logo Dragão Mercante"
+          width={150}
+          height={58.49}
+          className="h-auto w-auto"
+        />
+      </Link>
+      <div className="flex items-center">
+        <Button variant="outline" size="icon">
+          <ShoppingCart />
+        </Button>
       </div>
     </header>
   );
